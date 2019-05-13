@@ -2,16 +2,20 @@
 #### R package for quantifying microhomologies in pre-mapped DNA sequencing of CRISPR/Cas9 deletions
 
 mhscanR contains three main functions for analysing microhomology sequences in CRISPR/Cas9 deletions.
-mhq 
 
 > **mhq**
+
 Quantifies micorhomologies in CRISPR/Cas9 deletions. It accepts targeted amplicon next-generation sequencing data analysed using CRISPResso (1.0.x, [Pinello et al., 2016](doi.org/10.1038/nbt.3583)). Alternatively, it accepts any other sequencing data (eg Sanger sequencing) processed using a local alignment tool (e.g. [MUSCLE](https://doi.org/10.1186/1471-2105-5-113)).
 
 > **gcq** 
+
 Quantifies GC content of microhomologies of different lengths. Also performs statistical testing for whether GC bases are enriched compared to an expected background GC content.
 
 > **amh**
+
 Counts alternative microhomologies in Sanger sequencing data of CRISPR/Cas9 deletions analysed using mhq. Note: when analysing CRISPResso data, alternative microhomology count is automatically included in the mhq function and this function does not need to be run separately.
+
+* * *
 
 ### Example 1 -- Analysing microhomologies in deep sequenced CRISPR/Cas9 deletions analysed using CRISPResso
 ```
@@ -30,12 +34,12 @@ Output is a dataframe (or list of dataframes) containing tab seperated columns:
 - altMH_count (alternative microhomologies found within the deleted sequence)
 
 Writes analysed data files in /path/to/directory/MHQuant_out/MHQuant_out_Allele_Frequency_table.txt 
-
+* * *
 ### Example 2 -- Analysing microhomologies in Sanger sequenced CRISPR/Cas9 deletions analysed using MUSCLE
 ```
 Results <- mhq(input=/path/to/sequenceDataFile.txt, CRSISPresso=FALSE)
 ```
-- Input= sequenceDataFile.txt file 
+- Input= sequenceDataFile.txt
 - CRISPResso=FALSE
 
  sequenceDataFile.txt should contain deletion alleles that were already aligned using a local alignment tool such as [MUSCLE](https://doi.org/10.1186/1471-2105-5-113). It needs five tab-seperated columns containing the DNA sequences of the breakpoints to be analysed. The length of each of the DNA sequences can be varied between rows, but must be the same between columns. For example:
@@ -54,7 +58,7 @@ where:
 Output is a dataframe containing the original five columns as well as these additional columns:
 - MH_amount (microhomology amount found, if any, or "No_MH")
 - MH_sequence (microhomology sequence found, if any, or "No_MH")
-
+* * *
 ### Example 3 -- Analysing GC content of microhomologies in deep sequenced CRISPR/Cas9 deletions or Sanger sequenced deletions analysed using mhq
 ```
 GC_2orMoreBp_MHs <- gcq(mhqOutCRISPResso, MH=2, equalTo=F, expected=0.46, CRISPResso=T)
@@ -73,7 +77,7 @@ Output is a dataframe with columns:
 - baseProb = observed number of bases of each type in the microhomologies analysed (0 to 1 a.k.a 0 to 100
 - expectedProb = expected probability (0 to 1) of bases of each type (known background for the region of the deletions - determined by the user)
 - pval = chi square test p value (chance of finding the observed vs expected probability)
-
+* * *
 ### Example 4 -- Analysing alternative microhomologies in Sanger sequenced CRISPR/Cas9 deletions
 
 ```
@@ -101,7 +105,7 @@ Input text file columns required:
 Output is a dataframe containing the original data and two additional columns:
 - altMH_count - Number of alternative microhomologies found
 - add_delSize - Additional size of deletion beyond sgRNAs (same as deletion size when using one sgRNA)
-
+* * *
 ## To install mhscanR via RStudio
 ```
 library(devtools)
@@ -110,6 +114,8 @@ library(mhscanR)
 ```
 
 Uses Biostrings, stringi, tidyverse, BSGenome, GenomicRanges.
+
+Queries, bugs, or discussions welcome: dominic.owens@balliol.ox.ac.uk
 
 License
 ----
