@@ -83,7 +83,7 @@ Output is a dataframe with columns:
 ```
 library(BSgenome.Mmusculus.UCSC.mm9)
 genome <- BSgenome.Mmusculus.UCSC.mm9
-alt_MHs <- amh(input=/path/to/sequenceDataFile_altMH.txt, genome)
+alt_MHs <- amh(input, genome)
 ```
 
 - input= tab seperated text file containing data derived from output of mhq(yourData) **with additional columns** added (see below)
@@ -113,7 +113,7 @@ devtools::install_github("d0minicO/mhscanR")
 library(mhscanR)
 ```
 
-Uses Biostrings, stringi, tidyverse, BSGenome, GenomicRanges.
+Uses Biostrings, stringi, BSGenome, GenomicRanges and tidyverse packages. See http://bioconductor.org/ and https://www.tidyverse.org/ if having trouble installing these packages.
 
 Queries, bugs, or discussions welcome: dominic.owens@balliol.ox.ac.uk
 
