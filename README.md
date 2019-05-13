@@ -5,15 +5,15 @@ mhscanR contains three main functions for analysing microhomology sequences in C
 
 > **mhq**
 
-Quantifies micorhomologies in CRISPR/Cas9 deletions. It accepts targeted amplicon next-generation sequencing data analysed using CRISPResso (1.0.x, [Pinello et al., 2016](doi.org/10.1038/nbt.3583)). Alternatively, it accepts any other sequencing data (eg Sanger sequencing) processed using a local alignment tool (e.g. [MUSCLE](https://doi.org/10.1186/1471-2105-5-113)).
+Quantifies micorhomologies in CRISPR/Cas9 deletions. Accepts targeted amplicon next-generation sequencing data analysed using CRISPResso (1.0.x, [Pinello et al., 2016](doi.org/10.1038/nbt.3583)), or accepts any other sequencing data (eg Sanger sequencing) processed using a local alignment tool (e.g. [MUSCLE](https://doi.org/10.1186/1471-2105-5-113)).
 
 > **gcq** 
 
-Quantifies GC content of microhomologies of different lengths. Also performs statistical testing for whether GC bases are enriched compared to an expected background GC content.
+Quantifies GC content of microhomologies of different lengths. Performs statistical test of whether GC bases are enriched compared to an expected background GC content.
 
 > **amh**
 
-Counts alternative microhomologies in Sanger sequencing data of CRISPR/Cas9 deletions analysed using mhq. Note: when analysing CRISPResso data, alternative microhomology count is automatically included in the mhq function and this function does not need to be run separately.
+Counts alternative microhomologies in Sanger sequencing data of CRISPR/Cas9 deletions analysed using mhq. Note: when analysing CRISPResso data, alternative microhomology count is automatically calculated by the mhq function and this function does not need to be run separately.
 
 * * *
 
@@ -101,6 +101,8 @@ Input text file columns required:
 - strand - **Additional**: strand that deletion was mapped to (or strand that microhomology is reported for)
 - sg_start - **Additional**: bed coordinate start of sgRNAs span (if pairs of sgRNAs used, then start coordinate of 5' most sgRNA)
 - sg_stop - **Additional**: bed coordinate end of sgRNAs span (if pairs of sgRNAs used, then end coordinate of 3' most sgRNA)
+
+To gather the bed format information for the additional columns, a tool like UCSC BLAT can be used.
 
 Output is a dataframe containing the original data and two additional columns:
 - altMH_count - Number of alternative microhomologies found

@@ -49,8 +49,9 @@ Example2   CGTGGCGAGGCGTGG GCTGAGCTATGCTAT TGTTAGCACAGCACA GCTTCTCCACTCCA \cr
 }
 }
 \examples{
-MHQuant(input=/path/to/directory/, CRSISPresso=TRUE)
-MHQuant(input=/path/to/sequenceDataFile.txt, CRSISPresso=FALSE)
+MHQuant(input="/path/to/directory", CRSISPresso=TRUE)
+MHQuant(input="/path/to/sequenceDataFile.txt", CRSISPresso=FALSE)
+
 }
 \keyword{CRISPR,}
 \keyword{Microhomology}

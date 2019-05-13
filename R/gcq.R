@@ -25,6 +25,7 @@ gcq <- function(input, MH, equalTo=F, expected, CRISPResso=T){
   #' @param input dataframe output after running mhq(yourData)
   #' @param MH microhomology amount to filter for
   #' @param equalTo if set to TRUE search ONLY for microhomologies equal to MH. If set to FALSE search for microhomologies greater than or equal to MH
+  #' @param expected Eexpected background GC content over the region containing deletions (if 50% background, expected=0.5.) Determined by the user.
   #' @param CRISPResso are you analysing a dataframe containing analysed CRISPResso data?
   #' 
   #' @export

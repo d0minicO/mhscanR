@@ -32,18 +32,20 @@ amh <- function(input, genome){
   #' }
   #'
   #' @examples
-  #' genome <- BSgenome.Mmusculus.UCSC.mm9
   #' amh(input="path/to/sequenceData.txt", genome)
   #'
   #' @param input text file derived from output of mhq(yourData) with additional columns as specified here
-  #' @param genome BSGenome object to pull sequences from. IMPORTANT: Has to be loaded before running the function.
+  #' @param genome BSGenome object to pull sequences from. IMPORTANT: Has to be loaded before running the function. (i.e. genome <- BSgenome.Mmusculus.UCSC.mm9)
   #' @export
   #'
-
-  require(BSgenome)
-  require(Biostrings)
-  require(tidyverse)
-  require(GenomicRanges)
+  #' 
+  #' @import BSgenome
+  #' @import Biostrings
+  #' @import tidyverse
+  #' @import GenomicRanges
+  #' @import readr
+  #' @import dplyr
+  
 
   df <- read_tsv(input, col_names = F) %>% data.frame()
   colnames(df) <- c("ID", "L1", "L2", "R1", "R2", "MH_score", "MH", "LD_chr", "LD_start", "LD_stop", "strand", "sg_start", "sg_stop")
