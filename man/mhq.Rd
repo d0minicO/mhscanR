@@ -37,7 +37,7 @@ Output contains these tab seperated columns: \cr
 \cr
 When analysing Sanger sequencing data (CRISPResso=FALSE): Input should be a single .txt file containing deletion alleles that were already aligned using a local alignment tool such as MUSCLE (Edgar, 2004). Input text file should contain five tab-seperated columns containing the DNA sequences of the breakpoints to be analysed. The length of each of the DNA sequences can be varied between rows, but must be the same between columns. See this example: \cr
 \cr
-Example1   CGTGGCGAGG GCTGAGCTAT TGTTAGCACA GCTTCTCCA
+Example1   CGTGGCGAGG GCTGAGCTAT TGTTAGCACA GCTTCTCCA \cr
 Example2   CGTGGCGAGGCGTGG GCTGAGCTATGCTAT TGTTAGCACAGCACA GCTTCTCCACTCCA \cr
 
 \itemize{
