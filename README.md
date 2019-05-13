@@ -110,7 +110,8 @@ Output is a dataframe containing the original data and two additional columns:
 * * *
 ## To install mhscanR via RStudio
 ```
-library(devtools)
+if (!requireNamespace("devtools", quietly = TRUE))
+    install.packages("devtools")
 devtools::install_github("d0minicO/mhscanR")
 library(mhscanR)
 ```
