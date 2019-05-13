@@ -20,9 +20,9 @@ gcq_CRISPResso <- function(input, MH, equalTo=F,  expected){
   # 4 expectedProb = expected probability (0 to 1) of bases of each type (known background for the region of the deletions - determined by the user)
   # 5 pval = chi sqaure test p value (chance of finding the observed vs expected probability)
 
-  #' @import stats
-  #' @import Biostrings
-
+  #' @importFrom stats chisq.test
+  #' @importFrom Biostrings letterFrequency
+  NULL
 
   # gather the list of analysed files in the list of dataframes names
   files <- names(input)

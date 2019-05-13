@@ -43,6 +43,7 @@ Output is the original dataframe but with two additional columns:
 }
 }
 \examples{
-amh(input="path/to/sequenceData.txt", genome)
+genome <- BSgenome.Mmusculus.UCSC.mm9
+amh(input="~/exampleData/Sanger/sequenceDataFile_altMH.txt", genome)
 
 }

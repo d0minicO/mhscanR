@@ -45,13 +45,13 @@ mhq <- function(input, CRISPResso=TRUE){
   #' @export
   #'
   #' @examples
-  #' MHQuant(input="/path/to/directory", CRSISPresso=TRUE)
-  #' MHQuant(input="/path/to/sequenceDataFile.txt", CRSISPresso=FALSE)
-  #' 
-  #' @import Biostrings
+  #' mhq(input="~/exampleData/CRISPResso/", CRSISPresso=TRUE)
+  #' mhq(input="~/exampleData/Sanger/sequenceDataFile.txt", CRSISPresso=FALSE)
+  #'
+  #' @importFrom Biostrings getSeq countPattern matchPattern reverseComplement
   #' @import stringi
   #' @import stringr
-
+  NULL
 
   if (CRISPResso==T){
     directory <- input

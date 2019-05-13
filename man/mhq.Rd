@@ -49,8 +49,8 @@ Example2   CGTGGCGAGGCGTGG GCTGAGCTATGCTAT TGTTAGCACAGCACA GCTTCTCCACTCCA \cr
 }
 }
 \examples{
-MHQuant(input="/path/to/directory", CRSISPresso=TRUE)
-MHQuant(input="/path/to/sequenceDataFile.txt", CRSISPresso=FALSE)
+mhq(input="~/exampleData/CRISPResso/", CRSISPresso=TRUE)
+mhq(input="~/exampleData/Sanger/sequenceDataFile.txt", CRSISPresso=FALSE)
 
 }
 \keyword{CRISPR,}

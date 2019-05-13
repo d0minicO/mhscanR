@@ -1,7 +1,7 @@
 gather2 <- function(file){
   # Gathers the other .text file (not CRISPResso)
   # returns a cleaned up data frame for MH quantification
-  #' @import utils
+  #' @importFrom utils read.delim
 
 
   dfx <- data.frame(read.delim(file, header=F, sep = "\t"))

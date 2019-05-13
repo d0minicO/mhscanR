@@ -4,7 +4,7 @@ gather <- function(file){
   # adds a buffer of "-" characters at beginning and end to allow indexing of the deletion
   # keeps only the deleted reads
   # returns a list of all the data tables in a list called data_all
-  #' @import utils
+  #' @importFrom utils read.delim
 
 
   dfx <- data.frame(read.delim(file, header=T, sep = "\t"))

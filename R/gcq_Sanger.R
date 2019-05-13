@@ -17,9 +17,10 @@ gcq_Sanger <- function(input, MH, equalTo=F, expected){
   # 3 baseProb = observed number of bases of each type in the microhomologies analysed (0 to 1 a.k.a 0 to 100%)
   # 4 expectedProb = expected probability (0 to 1) of bases of each type (known background for the region of the deletions - determined by the user)
   # 5 pval = chi sqaure test p value (chance of finding the observed vs expected probability)
-  #' @import stats
-  #' @import Biostrings
 
+  #' @importFrom stats chisq.test
+  #' @importFrom Biostrings letterFrequency
+  NULL
 
   if(equalTo==T){
     # filter the alleles based on the given microhomology amount
