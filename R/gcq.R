@@ -5,7 +5,8 @@ gcq <- function(input, MH, equalTo=F, expected, CRISPResso=T){
   #' It filters the deletions for those with a given amount of microhomology and then performs 
   #' a chi sqaure test to compare the observed vs the expected GC content of the microhomologies.
   #' 
-  #' \cr 
+  #' \cr
+  #' 
   #' Output is a dataframe with columns:
   #' 
   #' \itemize{
@@ -16,8 +17,6 @@ gcq <- function(input, MH, equalTo=F, expected, CRISPResso=T){
   #'   \item pval = chi sqaure test p value (chance of finding the observed vs expected probability)
   #' }
   #' 
-  #' 
-  #' 
   #' @examples
   #' gcq(mhqOutCRISPResso, MH=1, equalTo=F, expected=0.46, CRISPResso=T)
   #' gcq(mhqOutSanger, MH=2, equalTo=T, expected=0.51, CRISPResso=F)
@@ -25,10 +24,11 @@ gcq <- function(input, MH, equalTo=F, expected, CRISPResso=T){
   #' @param input dataframe output after running mhq(yourData)
   #' @param MH microhomology amount to filter for
   #' @param equalTo if set to TRUE search ONLY for microhomologies equal to MH. If set to FALSE search for microhomologies greater than or equal to MH
-  #' @param expected Eexpected background GC content over the region containing deletions (if 50% background, expected=0.5.) Determined by the user.
+  #' @param expected  background GC content over the region containing deletions (if 50 percent background, expected=0.5.) Determined by the user.
   #' @param CRISPResso are you analysing a dataframe containing analysed CRISPResso data?
   #' 
   #' @export
+  #' 
 
 
   if (CRISPResso==T){

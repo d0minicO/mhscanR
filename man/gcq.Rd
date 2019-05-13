@@ -13,7 +13,7 @@ gcq(input, MH, equalTo = F, expected, CRISPResso = T)
 
 \item{equalTo}{if set to TRUE search ONLY for microhomologies equal to MH. If set to FALSE search for microhomologies greater than or equal to MH}
 
-\item{expected}{Eexpected background GC content over the region containing deletions (if 50% background, expected=0.5.) Determined by the user.}
+\item{expected}{background GC content over the region containing deletions (if 50 percent background, expected=0.5.) Determined by the user.}
 
 \item{CRISPResso}{are you analysing a dataframe containing analysed CRISPResso data?}
 }
@@ -23,7 +23,8 @@ It filters the deletions for those with a given amount of microhomology and then
 a chi sqaure test to compare the observed vs the expected GC content of the microhomologies.
 }
 \details{
-\cr 
+\cr
+
 Output is a dataframe with columns:
 
 \itemize{
