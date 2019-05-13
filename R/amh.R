@@ -32,6 +32,7 @@ amh <- function(input, genome){
   #' }
   #'
   #' @examples
+  #' genome <- BSgenome.Mmusculus.UCSC.mm9
   #' amh(input="path/to/sequenceData.txt", genome)
   #'
   #' @param input text file derived from output of mhq(yourData) with additional columns as specified here
