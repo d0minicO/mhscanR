@@ -50,6 +50,7 @@ mhq <- function(input, CRISPResso=TRUE){
 
   require(Biostrings)
   require(stringi)
+  require(stringr)
 
   if (CRISPResso==T){
     directory <- input

@@ -113,7 +113,7 @@ devtools::install_github("d0minicO/mhscanR")
 library(mhscanR)
 ```
 
-Uses Biostrings, stringi, BSGenome, GenomicRanges and tidyverse packages. See http://bioconductor.org/ and https://www.tidyverse.org/ if having trouble installing these packages.
+Uses Biostrings, stringi, stringr, BSGenome, GenomicRanges and tidyverse packages. See http://bioconductor.org/ and https://www.tidyverse.org/ if having trouble installing these packages.
 
 Queries, bugs, or discussions welcome: dominic.owens@balliol.ox.ac.uk
 
