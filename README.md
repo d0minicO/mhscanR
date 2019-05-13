@@ -83,7 +83,7 @@ Output is a dataframe with columns:
 ```
 library(BSgenome.Mmusculus.UCSC.mm9)
 genome <- BSgenome.Mmusculus.UCSC.mm9
-alt_MHs <- amh(input, genome)
+alt_MHs <- amh(input=/path/to/sequenceDataFile_altMH.txt, genome)
 ```
 
 - input= tab seperated text file containing data derived from output of mhq(yourData) **with additional columns** added (see below)
