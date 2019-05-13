@@ -19,7 +19,7 @@ Counts alternative microhomologies in Sanger sequencing data of CRISPR/Cas9 dele
 
 ### Example 1 -- Analysing microhomologies in deep sequenced CRISPR/Cas9 deletions analysed using CRISPResso
 ```
-Results <- mhq(input=/path/to/directory/, CRSISPresso=TRUE)
+Results <- mhq(input="~/exampleData/CRISPResso/", CRSISPresso=TRUE)
 ```
 - input=/path/to/directory/ containing **ONLY** one or more Allele_frequency_table.txt files that were outputted by CRISPResso (1.0.x) ([Pinello et al., 2016](doi.org/10.1038/nbt.3583)). No other .txt files should be in this directory.
 - CRISPResso=TRUE
@@ -37,12 +37,12 @@ Writes analysed data files in /path/to/directory/MHQuant_out/MHQuant_out_Allele_
 * * *
 ### Example 2 -- Analysing microhomologies in Sanger sequenced CRISPR/Cas9 deletions analysed using MUSCLE
 ```
-Results <- mhq(input=/path/to/sequenceDataFile.txt, CRSISPresso=FALSE)
+mhq(input="~/exampleData/Sanger/sequenceDataFile.txt", CRSISPresso=FALSE)
 ```
 - Input= sequenceDataFile.txt
 - CRISPResso=FALSE
 
- sequenceDataFile.txt should contain deletion alleles that were already aligned using a local alignment tool such as [MUSCLE](https://doi.org/10.1186/1471-2105-5-113). It needs five tab-seperated columns containing the DNA sequences of the breakpoints to be analysed. The length of each of the DNA sequences can be varied between rows, but must be the same between columns. For example:
+ sequenceDataFile.txt should contain sequences of deletion alleles that were already mapped and aligned using a local alignment tool such as [MUSCLE](https://doi.org/10.1186/1471-2105-5-113). It needs five tab-seperated columns containing the DNA sequences of the breakpoints to be analysed. The length of each of the DNA sequences can be varied between rows, but must be the same between columns. For example:
 
 ```
 Example1   CGTGGCGAGG GCTGAGCTAT TGTTAGCACA GCTTCTCCA
@@ -61,8 +61,8 @@ Output is a dataframe containing the original five columns as well as these addi
 * * *
 ### Example 3 -- Analysing GC content of microhomologies in deep sequenced CRISPR/Cas9 deletions or Sanger sequenced deletions analysed using mhq
 ```
-GC_2orMoreBp_MHs <- gcq(mhqOutCRISPResso, MH=2, equalTo=F, expected=0.46, CRISPResso=T)
-GC_3bp_MHs <- gcq(mhqOutSanger, MH=3, equalTo=T, expected=0.56, CRISPResso=F)
+gcq(mhqOutCRISPResso, MH=2, equalTo=F, expected=0.46, CRISPResso=T)
+gcq(mhqOutSanger, MH=3, equalTo=T, expected=0.56, CRISPResso=F)
 ```
 
 - input=list of dataframes output after running mhq(yourData, CRISPResso=T), or dataframe output after running mhq(yourData, CRISPResso=F)
@@ -83,7 +83,7 @@ Output is a dataframe with columns:
 ```
 library(BSgenome.Mmusculus.UCSC.mm9)
 genome <- BSgenome.Mmusculus.UCSC.mm9
-alt_MHs <- amh(input, genome)
+amh(input="~/exampleData/Sanger/sequenceDataFile_altMH.txt", genome)
 ```
 
 - input= tab seperated text file containing data derived from output of mhq(yourData) **with additional columns** added (see below)
