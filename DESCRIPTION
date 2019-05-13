@@ -1,0 +1,14 @@
+Package: mhscanR
+Title: Analysis of Microhomologies in CRISPR/Cas9 Deletions
+Version: 0.1
+Authors@R: 
+    person(given = "Dominic",
+           family = "Owens",
+           role = c("aut", "cre"),
+           email = "dominic.owens@imm.ox.ac.uk",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Accepts next-generation targeted amplicon sequencing data analysed by CRISPResso (Pinello, 2016) or custom sequences. CRISPResso alleles are filtered for simple deletions (that span one contiguous region)  without mutations (+/- 10bp of the deletion ends). Microhomologies are quantified at either the left or right deletion breakpoint junctions and the sequence and size of the largest microhomology will be reported. The number of alternative microhomologies that were located within the deleted region will also be reported.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: false
+RoxygenNote: 6.1.1.9000
