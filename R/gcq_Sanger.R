@@ -32,7 +32,6 @@ gcq_Sanger <- function(input, MH, equalTo=F, expected){
     input_MH_filt <- input[input$MH_filt==T,]
   } else {
     cat("You need to chose whether to search for GC content in alleles with microhomology *greater than* or *equal to* the given MH value")
-    break
     }
 
   # calculate percentage of total alleles with that amount of microhomology

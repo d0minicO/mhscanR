@@ -1,6 +1,6 @@
 Package: mhscanR
 Title: Analysis of Microhomologies in CRISPR/Cas9 Deletions
-Version: 0.1
+Version: 1.0
 Authors@R: 
     person(given = "Dominic",
            family = "Owens",
@@ -11,6 +11,6 @@ Description: Accepts next-generation targeted amplicon sequencing data analysed 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: false
-Imports: BSgenome, Biostrings, GenomicRanges, stringi, stringr, tidyverse, stats, utils, dplyr, readr
+Imports: BSgenome, Biostrings, GenomicRanges, stringi, stringr, stats, utils, dplyr, readr
 URL: https://github.com/d0minicO/mhscanR
 RoxygenNote: 6.1.1.9000

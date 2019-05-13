@@ -42,7 +42,6 @@ amh <- function(input, genome){
   #'
   #' @import BSgenome
   #' @importFrom Biostrings getSeq countPattern matchPattern reverseComplement DNAString subseq
-  #' @import tidyverse
   #' @importFrom readr read_tsv
   #' @import dplyr
   #' @import utils
