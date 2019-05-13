@@ -78,6 +78,7 @@ amh <- function(input, genome){
 
   } # end of for each row loop
   df_new <- bind_rows(df_new)
+  df_new <- df_new[,c(1:13, 21, 22)] # only keep the columns of interest
   return(df_new)
 } # end of amh function
 
