@@ -7,9 +7,9 @@
 amh(input, genome)
 }
 \arguments{
-\item{input}{text file derived from output of mhq(yourData) with additional columns as specified here}
+\item{input}{text file derived from output of mhq(yourData) with additional columns as specified below}
 
-\item{genome}{BSGenome object to pull sequences from. IMPORTANT: Has to be loaded before running the function. (i.e. genome <- BSgenome.Mmusculus.UCSC.mm9)}
+\item{genome}{BSgenome object to pull sequences from. IMPORTANT: Has to be loaded before running the function. (i.e. genome <- BSgenome.Mmusculus.UCSC.mm9). Allows any BSgenome supported genome to be used.}
 }
 \description{
 This function is for counting the number of "alternative / more proximal" microhomologies that were bypassed during repair the repair of a CRISPR deletion.

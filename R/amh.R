@@ -35,8 +35,8 @@ amh <- function(input, genome){
   #' genome <- BSgenome.Mmusculus.UCSC.mm9
   #' amh(input="~/exampleData/Sanger/sequenceDataFile_altMH.txt", genome)
   #'
-  #' @param input text file derived from output of mhq(yourData) with additional columns as specified here
-  #' @param genome BSGenome object to pull sequences from. IMPORTANT: Has to be loaded before running the function. (i.e. genome <- BSgenome.Mmusculus.UCSC.mm9)
+  #' @param input text file derived from output of mhq(yourData) with additional columns as specified below
+  #' @param genome BSgenome object to pull sequences from. IMPORTANT: Has to be loaded before running the function. (i.e. genome <- BSgenome.Mmusculus.UCSC.mm9). Allows any BSgenome supported genome to be used.
   #' @export
   #'
   #'
@@ -47,8 +47,6 @@ amh <- function(input, genome){
   #' @import utils
 
   NULL
-
-  globalVariables("genome") # genome is a global variable loaded outside of the amh function to allow different genomes to be used
 
   df <- read_tsv(input, col_names = F) %>% data.frame()
   colnames(df) <- c("ID", "L1", "L2", "R1", "R2", "MH_score", "MH", "LD_chr", "LD_start", "LD_stop", "strand", "sg_start", "sg_stop")
@@ -117,8 +115,6 @@ classify <- function(df){
 class1 <- function(df_row){
   # this function searches for alternate MHs in class 1 LDs that extend past both sgRNAs
 
-  globalVariables("genome") # genome is a global variable loaded outside of the amh function to allow different genomes to be used
-
   if(df_row$strand == 1){
     seqa <- as.character(Biostrings::getSeq(genome, df_row$LD_chr, df_row$LD_start, df_row$sg_start)) # -1 from start coordinate otherwise 0-based indexing means original identified MH might not be found!
     seqb <- as.character(Biostrings::getSeq(genome, df_row$LD_chr, df_row$sg_stop, df_row$LD_stop))
@@ -139,8 +135,6 @@ class1 <- function(df_row){
 class2 <- function(df_row){
   # this function searches for MHs in class 2 LDs that extend past 3' sgRNA and does not include both sgRNAs in deletion
 
-  globalVariables("genome") # genome is a global variable loaded outside of the amh function to allow different genomes to be used
-
   if(df_row$strand== 1){
     seqa <- as.character(Biostrings::getSeq(genome, df_row$LD_chr, df_row$LD_start, df_row$LD_stop))
     df_row$altMH_count <- Biostrings::countPattern(df_row$MH,seqa)-1 # minus one that is the original MH identified
@@ -155,8 +149,6 @@ class2 <- function(df_row){
 
 class3 <- function(df_row){
   # this function searches for MHs in class 3 LDs that extend past 3' sgRNA and includes both sgRNAs in deletion
-
-  globalVariables("genome") # genome is a global variable loaded outside of the amh function to allow different genomes to be used
 
   if(df_row$strand == 1){
     seqa <- as.character(Biostrings::getSeq(genome, df_row$LD_chr, df_row$sg_stop, df_row$LD_stop))
@@ -174,8 +166,6 @@ class3 <- function(df_row){
 class4 <- function(df_row){
   # this function searches for MHs in class 4 LDs that extend past 5' sgRNA and does not include both sgRNAs in deletion
 
-  globalVariables("genome") # genome is a global variable loaded outside of the amh function to allow different genomes to be used
-
   if(df_row$strand == 1){
     seqa <- as.character(Biostrings::getSeq(genome, df_row$LD_chr, df_row$LD_start, df_row$LD_stop))
     df_row$altMH_count <- Biostrings::countPattern(df_row$MH,seqa)-1 # minus one that is the original MH identified
@@ -190,8 +180,6 @@ class4 <- function(df_row){
 
 class5 <- function(df_row){
   # this function searches for MHs in class 5 LDs that extend past 5' sgRNA and includes both sgRNAs in deletion
-
-  globalVariables("genome") # genome is a global variable loaded outside of the amh function to allow different genomes to be used
 
   if(df_row$strand == 1){
     seqa <- as.character(Biostrings::getSeq(genome, df_row$LD_chr, df_row$LD_start, df_row$sg_start))
