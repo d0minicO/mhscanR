@@ -1,7 +1,7 @@
 # mhscanR
 #### R package for quantifying microhomologies in pre-mapped DNA sequencing of CRISPR/Cas9 deletions
 
-mhscanR contains three main functions for analysing microhomology sequences in CRISPR/Cas9 deletions.
+Contains three main functions for analysing microhomology sequences in CRISPR/Cas9 deletions:
 
 > **mhq**
 
