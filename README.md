@@ -90,17 +90,19 @@ amh(input="~/exampleData/Sanger/sequenceDataFile_altMH.txt", genome)
 - genome= BSGenome object loaded before running the function.
 
 Input text file columns required:
-- MutantSequence - from mhq output
-- ReferenceSequence - from mhq output
-- SizeOfDeletion - from mhq output
-- NumberOfReads - from mhq output
-- MH_amount - from mhq output
-- LD_chr - **Additional**: chromosome of deletion start
-- LD_start - **Additional**: bed coordinate start of deletion span
-- LD_stop - **Additional**: bed coordinate end of deletion span
-- strand - **Additional**: strand that deletion was mapped to (or strand that microhomology is reported for)
-- sg_start - **Additional**: bed coordinate start of sgRNAs span (if pairs of sgRNAs used, then start coordinate of 5' most sgRNA)
-- sg_stop - **Additional**: bed coordinate end of sgRNAs span (if pairs of sgRNAs used, then end coordinate of 3' most sgRNA)
+- column1 = Sequence name
+- column2 = 5' sequence *not included* in the deletion
+- column3 = 5' sequence *included* in the deletion
+- column4 = 3' sequence *included* in the deletion
+- column5 = 3' sequence *not included* in the deletion
+- column6 = MH_amount (microhomology amount found, if any, or "No_MH")
+- column7 = MH_sequence (microhomology sequence found, if any, or "No_MH")
+- column8 = LD_chr - **Additional**: chromosome of deletion start
+- column9 = LD_start - **Additional**: bed coordinate start of deletion span
+- column10 = LD_stop - **Additional**: bed coordinate end of deletion span
+- column11 = strand - **Additional**: strand that deletion was mapped to (or strand that microhomology is reported for)
+- column12 = sg_start - **Additional**: bed coordinate start of sgRNAs span (if pairs of sgRNAs used, then start coordinate of 5' most sgRNA)
+- column13 = sg_stop - **Additional**: bed coordinate end of sgRNAs span (if pairs of sgRNAs used, then end coordinate of 3' most sgRNA)
 
 To gather the bed format information for the additional columns, a tool like UCSC BLAT can be used.
 
