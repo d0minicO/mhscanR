@@ -90,13 +90,13 @@ amh(input="~/exampleData/Sanger/sequenceDataFile_altMH.txt", genome)
 - genome= BSGenome object loaded before running the function.
 
 Input text file columns required:
-- column1 = Sequence name
-- column2 = 5' sequence *not included* in the deletion
-- column3 = 5' sequence *included* in the deletion
-- column4 = 3' sequence *included* in the deletion
-- column5 = 3' sequence *not included* in the deletion
-- column6 = MH_amount (microhomology amount found, if any, or "No_MH")
-- column7 = MH_sequence (microhomology sequence found, if any, or "No_MH")
+- column1 = Sequence name *(same as input/output of mhq function)*
+- column2 = 5' sequence *not included* in the deletion *(same as input/output of mhq function)*
+- column3 = 5' sequence *included* in the deletion *(same as input/output of mhq function)*
+- column4 = 3' sequence *included* in the deletion *(same as input/output of mhq function)*
+- column5 = 3' sequence *not included* in the deletion *(same as input/output of mhq function)*
+- column6 = MH_amount (microhomology amount found, if any, or "No_MH") *(same as output of mhq function)*
+- column7 = MH_sequence (microhomology sequence found, if any, or "No_MH") *(same as output of mhq function)*
 - column8 = LD_chr - **Additional**: chromosome of deletion start
 - column9 = LD_start - **Additional**: bed coordinate start of deletion span
 - column10 = LD_stop - **Additional**: bed coordinate end of deletion span
